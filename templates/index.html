@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/styles.css') }}">
+</head>
+<body>
+
+<div class="textarea-container">
+    <form method="post" action="{{ url_for('getxml') }}" style="display: flex; align-items: center;">
+
+
+        <div class="form-floating mb-3" style="float: left;">
+            <textarea class="form-control" style="width: 550px; height: 650px;" name="xml2" placeholder="Put your XML code here" id="xml" oninput="updateLineNumber(this)">
+                {{ input_text }}
+            </textarea>
+        </div>
+
+        <button type="submit" class="btn">
+            XML to JSON
+            <span></span>
+        </button>
+
+        <div class="form-floating mb-3" style="float: right;">
+            <textarea class="form-control" style="width: 550px; height: 650px;" placeholder="Put your JSON code here" id="json">
+                {{ data }}
+            </textarea>
+        </div>
+
+    </form>
+</div>
+
+
+
+</body>
+</html>
